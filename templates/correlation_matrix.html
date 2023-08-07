@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Correlation Matrix - NGEN Markets{% endblock %}
+
+{% block content %}
+<h2>Correlation Matrix</h2>
+<form action="" method="post">
+    <p>Select stocks for correlation analysis:</p>
+    {% for stock in stocks %}
+    <label><input type="checkbox" name="stocks" value="{{ stock }}"> {{ stock }}</label><br>
+    {% endfor %}
+    <button type="submit">Generate Correlation Matrix</button>
+</form>
+{% if selected_stocks %}
+<div class="result-container">
+    <h2>Correlation Matrix for Selected Stocks</h2>
+    <img src="data:image/png;base64,{{ plot_data }}" alt="Correlation Matrix">
+</div>
+{% endif %}
+{% endblock %}

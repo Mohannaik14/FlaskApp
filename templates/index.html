@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NGEN Markets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Include Font Awesome stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <h1>Welcome to NGEN Markets</h1>
+    <ul>
+        <!-- Use the <i> tag for the home icon -->
+        <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i></a></li>
+        <li><a href="{{ url_for('correlation_matrix') }}">Correlation Matrix</a></li>
+        <li><a href="{{ url_for('stock_prices') }}">Stock Prices</a></li>
+        <li><a href="{{ url_for('beta_analysis') }}">Beta Analysis</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Stock Prices - NGEN Markets{% endblock %}
+
+{% block content %}
+<h2>Stock Prices</h2>
+<form action="" method="post">
+    <label for="stock">Select stock:</label>
+    <select name="stock">
+        {% for stock in stocks %}
+        <option value="{{ stock }}">{{ stock }}</option>
+        {% endfor %}
+    </select>
+    <label for="date">Select date:</label>
+    <input type="date" name="date">
+    <button type="submit">Fetch Stock Prices</button>
+</form>
+{% if selected_stock %}
+<div class="result-container">
+    <h2>{{ selected_stock }} Closing Prices</h2>
+    <img src="data:image/png;base64,{{ plot_data }}" alt="{{ selected_stock }} Plot">
+</div>
+{% endif %}
+{% endblock %}
